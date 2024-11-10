@@ -1,6 +1,6 @@
 # ProjetoFinal-IA
 
-* Instalar o arquivo vgsales.csv 
+* Instalar o arquivo vgsales.csv ou instalar pelo link: https://www.kaggle.com/datasets/gregorut/videogamesales
 * Abrir o arquivo ProjetoA3.ipynb no colab 
 * Adicionar o arquivo vgsales.csv em Arquivos no colab e executar
 
