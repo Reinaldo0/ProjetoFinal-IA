@@ -30,21 +30,52 @@ Após a importação e limpeza dos dados, foram detectadas linhas com valores nu
 
 # Resultados Iniciais e Análise do Modelo:
 
-Após o treinamento e avaliação do modelo, obtivemos os seguintes resultados de métricas:
+Após o treinamento e avaliação inicial do modelo, obtive os seguintes resultados de métricas:
 
 * Acurácia: 0.80
 * Precisão: 0.55
 * Recall: 0.46
 * F1 Score: 0.50
+
+# Resultados do modelo Random Forest aprimorado:
+
+Após realizar as melhorias, obtive as seguintes Métricas:
+
+* Acurácia: 0.98
+* Precisão: 0.97
+* Recall: 0.94
+* F1 Score: 0.96
   
 # Análise dos Pontos Fortes e Fracos do Modelo:
 
 Pontos Fortes:
 
-* Acurácia de 80% sugere que o modelo é razoavelmente eficaz em classificar jogos acima ou abaixo da média de vendas.
-* Random Forest lida bem com os dados categóricos e variáveis correlacionadas, gerando um modelo inicial estável e relativamente robusto.
+* Melhoria Significativa nas Métricas:
+O modelo Random Forest obteve uma alta acurácia (0.98), precisão (0.97), recall (0.94) e F1 Score (0.96), indicando um desempenho sólido em geral.
+A alta precisão sugere que o modelo tem uma baixa taxa de falsos positivos, identificando corretamente os casos positivos.
+
+* Capacidade de Generalização:
+O uso de técnicas como validação cruzada (GridSearchCV) e divisão do conjunto de dados para treinamento e teste reduz o risco de overfitting.
+
+* Feature Engineering Efetiva:
+A inclusão da feature Regional_Sales_Ratio captura relações importantes entre vendas globais e regionais, melhorando o desempenho.
+
+* Ajuste de Hiperparâmetros:
+A otimização com GridSearchCV ajudou a encontrar os melhores hiperparâmetros para maximizar o desempenho.
+
+* Robustez do Algoritmo:
+O Random Forest é robusto a outliers e não requer grande pré-processamento, sendo apropriado para dados heterogêneos como os analisados.
   
 Pontos Fracos:
 
-* Baixo Recall e Precisão indicam que o modelo ainda possui dificuldades em identificar jogos com vendas globais acima da média (classe positiva). Isso pode sugerir uma insuficiência de variáveis que realmente impactam nas vendas ou a necessidade de maior ajuste dos hiperparâmetros.
-* F1 Score de 0.50 mostra que o equilíbrio entre precisão e recall ainda precisa ser aprimorado para aumentar a eficácia da classificação de jogos de alto desempenho.
+* Complexidade Computacional:
+O treinamento do modelo Random Forest pode ser computacionalmente caro, especialmente com muitos hiperparâmetros ajustados em GridSearchCV.
+
+* Interpretação do Modelo:
+Modelos baseados em árvores, como o Random Forest, podem ser difíceis de interpretar, apesar de permitirem a análise de importância das features.
+
+* Possível Dependência do Conjunto de Dados:
+A alta performance pode estar relacionada a algum viés ou limitação específica dos dados (e.g., baixa diversidade ou desequilíbrio de classes).
+
+* Impacto das Features Categóricas:
+Embora a codificação one-hot tenha sido usada, o número elevado de categorias pode ter aumentado a dimensionalidade do conjunto de dados, possivelmente dificultando a interpretação.
